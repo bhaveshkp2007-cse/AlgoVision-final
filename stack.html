@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Visualizer - AlgoVis</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>AlgoVis - Data Structures Visualizer</h1>
+    <p>Simple College Project</p>
+</div>
+
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="stack.html" class="active">Stack</a>
+    <a href="queue.html">Queue</a>
+    <a href="linkedlist.html">Linked List</a>
+    <a href="hashmap.html">HashMap</a>
+</div>
+
+<div class="container">
+    <h2>Stack Visualizer (LIFO)</h2>
+    <p>Stack is Last In First Out. Last element inserted is removed first. This is a simple array-based stack.</p>
+
+    <div class="controls">
+        <label>Enter value:</label>
+        <input type="text" id="stackInput" class="input-box" placeholder="e.g. 10">
+        <button class="btn" onclick="push()">Push</button>
+        <button class="btn btn-grey" onclick="pop()">Pop</button>
+        <button class="btn btn-grey" onclick="peek()">Peek</button>
+        <button class="btn btn-dark" onclick="clearStack()">Clear</button>
+    </div>
+
+    <div id="message" class="message">Ready. Push values to stack. Capacity is 8.</div>
+
+    <h3>Stack Display</h3>
+    <div id="stackDisplay" class="display-area"></div>
+
+    <div class="info-box">
+        <b>Status:</b> Top = <span id="topVal">Empty</span> |
+        Size = <span id="sizeVal">0 / 8</span> |
+        Is Empty? <span id="isEmptyVal">Yes</span> |
+        Is Full? <span id="isFullVal">No</span>
+    </div>
+
+    <h3>How it works</h3>
+    <ul>
+        <li><b>Push:</b> Add element at top (top++)</li>
+        <li><b>Pop:</b> Remove element from top (top--)</li>
+        <li><b>Peek:</b> See top element without removing</li>
+        <li>Time complexity: O(1) for all operations</li>
+    </ul>
+
+    <div class="code-box">Backend logic in backend/visualizers.cpp -> class Stack { push(), pop(), peek(), isEmpty(), isFull() }
+Frontend: js/stack.js sends operations to the C++ backend and renders the returned stack state.</div>
+
+    <div class="footer">AlgoVis - Stack Module | Backend: C++ | Frontend: HTML/CSS/JS</div>
+</div>
+
+<script src="js/stack.js"></script>
+</body>
+</html>

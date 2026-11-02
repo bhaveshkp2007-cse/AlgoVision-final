@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashMap Visualizer - AlgoVis</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>AlgoVis - Data Structures Visualizer</h1>
+    <p>Simple College Project</p>
+</div>
+
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="stack.html">Stack</a>
+    <a href="queue.html">Queue</a>
+    <a href="linkedlist.html">Linked List</a>
+    <a href="hashmap.html" class="active">HashMap</a>
+</div>
+
+<div class="container">
+    <h2>HashMap Visualizer</h2>
+    <p>HashMap stores key-value pairs. Hash function: sum of char codes % capacity. Collision handled by Separate Chaining (linked list at each bucket).</p>
+
+    <div class="controls">
+        <label>Key:</label>
+        <input type="text" id="keyInput" class="input-box" placeholder="e.g. Alice">
+        <label>Value:</label>
+        <input type="text" id="valInput" class="input-box" placeholder="e.g. 25">
+        <br><br>
+        <button class="btn" onclick="insert()">Insert</button>
+        <button class="btn" onclick="search()">Search</button>
+        <button class="btn btn-grey" onclick="removeKey()">Delete</button>
+        <button class="btn btn-grey" onclick="loadExample()">Load Example</button>
+        <button class="btn btn-dark" onclick="clearMap()">Clear</button>
+    </div>
+
+    <div id="message" class="message">Ready. Insert key-value pairs. Capacity is 8 buckets.</div>
+
+    <h3>Hash Table (Capacity: 8)</h3>
+    <table class="hash-table">
+        <thead>
+            <tr>
+                <th>Bucket Index</th>
+                <th>Entries (Chaining)</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody id="hashBody"></tbody>
+    </table>
+
+    <div class="info-box">
+        Total Keys: <span id="statSize">0</span> |
+        Buckets: <span id="statCapacity">8</span> |
+        Load Factor: <span id="statLoadFactor">0.00</span>
+    </div>
+
+    <h3>How it works</h3>
+    <ul>
+        <li><b>Hash Function:</b> hash = (sum of char codes) % 8</li>
+        <li><b>Insert:</b> Calculate bucket, add to chain. If key exists, update value.</li>
+        <li><b>Search:</b> Go to bucket, check chain for key.</li>
+        <li><b>Delete:</b> Remove from chain.</li>
+        <li><b>Collision:</b> Multiple keys at same bucket stored as chain.</li>
+    </ul>
+
+    <div class="code-box">Backend: backend/visualizers.cpp -> class HashMap { hashFunction(), insert(), search(), remove(), display() } uses Separate Chaining.
+Frontend: js/hashmap.js sends operations to the C++ backend and renders returned buckets.</div>
+
+    <div class="footer">AlgoVis - HashMap Module | Backend: C++ | Frontend: HTML/CSS/JS</div>
+</div>
+
+<script src="js/hashmap.js"></script>
+</body>
+</html>

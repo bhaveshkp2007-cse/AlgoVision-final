@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue Visualizer - AlgoVis</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>AlgoVis - Data Structures Visualizer</h1>
+    <p>Simple College Project</p>
+</div>
+
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="stack.html">Stack</a>
+    <a href="queue.html" class="active">Queue</a>
+    <a href="linkedlist.html">Linked List</a>
+    <a href="hashmap.html">HashMap</a>
+</div>
+
+<div class="container">
+    <h2>Queue Visualizer (FIFO)</h2>
+    <p>Queue is First In First Out. First element inserted is removed first. Like a line of people.</p>
+
+    <div class="controls">
+        <label>Enter value:</label>
+        <input type="text" id="queueInput" class="input-box" placeholder="e.g. 10">
+        <button class="btn" onclick="enqueue()">Enqueue</button>
+        <button class="btn btn-grey" onclick="dequeue()">Dequeue</button>
+        <button class="btn btn-grey" onclick="front()">Front</button>
+        <button class="btn btn-dark" onclick="clearQueue()">Clear</button>
+    </div>
+
+    <div id="message" class="message">Ready. Enqueue values. Capacity is 8.</div>
+
+    <h3>Queue Display</h3>
+    <div id="queueDisplay" class="display-area"></div>
+
+    <div class="info-box">
+        <b>Status:</b> Front = <span id="frontVal">Empty</span> |
+        Size = <span id="sizeVal">0 / 8</span> |
+        Is Empty? <span id="isEmptyVal">Yes</span> |
+        Is Full? <span id="isFullVal">No</span>
+    </div>
+
+    <h3>How it works</h3>
+    <ul>
+        <li><b>Enqueue:</b> Add element at rear</li>
+        <li><b>Dequeue:</b> Remove element from front</li>
+        <li><b>Front:</b> See front element without removing</li>
+        <li>Time complexity: O(1)</li>
+    </ul>
+
+    <div class="code-box">Backend: backend/visualizers.cpp -> class Queue { enqueue(), dequeue(), getFront(), isEmpty(), isFull() }
+Frontend: js/queue.js sends operations to the C++ backend and renders the returned queue state.</div>
+
+    <div class="footer">AlgoVis - Queue Module | Backend: C++ | Frontend: HTML/CSS/JS</div>
+</div>
+
+<script src="js/queue.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+/* AlgoVis - Simple College Project Style */
+/* Dull, muted colors, basic layout */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d9d9d9;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Header */
+.header {
+    background-color: #555555;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 2px solid #333;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.header p {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* Navigation */
+.nav {
+    background-color: #c2c2c2;
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #999;
+}
+
+.nav a {
+    display: inline-block;
+    color: #222;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 2px 3px;
+    background-color: #e8e8e8;
+    border: 1px solid #888;
+    font-size: 13px;
+}
+
+.nav a:hover {
+    background-color: #d0d0d0;
+}
+
+.nav a.active {
+    background-color: #777;
+    color: white;
+    border-color: #555;
+}
+
+/* Main container */
+.container {
+    max-width: 900px;
+    margin: 12px auto;
+    background-color: #f2f2f2;
+    border: 1px solid #999;
+    padding: 14px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 15px;
+    color: #444;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+/* Controls */
+.controls {
+    background-color: #e0e0e0;
+    border: 1px solid #aaa;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.controls label {
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.input-box {
+    padding: 5px 6px;
+    border: 1px solid #888;
+    background-color: white;
+    font-size: 13px;
+    width: 120px;
+}
+
+.input-box:focus {
+    outline: none;
+    border-color: #555;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid #666;
+    background-color: #6b7a8f;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 2px;
+}
+
+.btn:hover {
+    background-color: #5a6a7f;
+}
+
+.btn-grey {
+    background-color: #777;
+}
+
+.btn-grey:hover {
+    background-color: #666;
+}
+
+.btn-dark {
+    background-color: #555;
+}
+
+/* Message box */
+.message {
+    border: 1px solid #999;
+    background-color: #ffffcc;
+    padding: 6px 8px;
+    margin: 8px 0;
+    font-size: 13px;
+    min-height: 22px;
+}
+
+.message.error {
+    background-color: #ffd6d6;
+    border-color: #aa6666;
+    color: #660000;
+}
+
+.message.success {
+    background-color: #d6e9d6;
+    border-color: #669966;
+    color: #224422;
+}
+
+/* Display areas */
+.display-area {
+    border: 1px solid #888;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0;
+    min-height: 80px;
+}
+
+.info-box {
+    background-color: #e8e8e8;
+    border: 1px solid #aaa;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.code-box {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 12px;
+    margin: 8px 0;
+    white-space: pre-wrap;
+}
+
+/* Stack specific */
+.stack-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 220px;
+    gap: 15px;
+}
+
+.stack-box {
+    width: 140px;
+    min-height: 200px;
+    border-left: 2px solid #555;
+    border-right: 2px solid #555;
+    border-bottom: 2px solid #555;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 4px;
+}
+
+.stack-item {
+    border: 1px solid #555;
+    background-color: #a8b8c8;
+    padding: 7px;
+    margin: 2px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stack-item.top {
+    background-color: #d9b44a;
+    border-color: #333;
+}
+
+.stack-labels {
+    font-size: 12px;
+    padding: 4px;
+}
+
+.stack-labels div {
+    margin: 4px 0;
+    padding: 2px 5px;
+    background-color: #e0e0e0;
+    border: 1px solid #aaa;
+}
+
+/* Queue specific */
+.queue-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px;
+    flex-wrap: wrap;
+    min-height: 90px;
+}
+
+.queue-item {
+    border: 1px solid #555;
+    background-color: #a8b8c8;
+    padding: 8px 14px;
+    text-align: center;
+    min-width: 50px;
+    font-weight: bold;
+}
+
+.queue-item.front {
+    background-color: #d9b44a;
+}
+
+.queue-arrow {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Linked list */
+.ll-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px;
+    overflow-x: auto;
+    min-height: 70px;
+}
+
+.ll-node {
+    display: flex;
+    border: 1px solid #555;
+    background-color: white;
+}
+
+.ll-data {
+    background-color: #a8b8c8;
+    padding: 6px 10px;
+    font-weight: bold;
+    border-right: 1px solid #555;
+    min-width: 30px;
+    text-align: center;
+}
+
+.ll-next {
+    padding: 6px 8px;
+    font-size: 11px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.ll-arrow {
+    font-size: 14px;
+    color: #333;
+}
+
+.ll-null {
+    border: 1px dashed #888;
+    padding: 6px 10px;
+    background-color: #eee;
+    font-size: 12px;
+}
+
+/* HashMap */
+.hash-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+}
+
+.hash-table th, .hash-table td {
+    border: 1px solid #888;
+    padding: 6px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.hash-table th {
+    background-color: #c2c2c2;
+    font-weight: bold;
+}
+
+.hash-table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.bucket-active {
+    background-color: #d9e8d9 !important;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #aaa;
+    margin-top: 12px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #bbb;
+    margin: 10px 0;
+}
+
+ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}

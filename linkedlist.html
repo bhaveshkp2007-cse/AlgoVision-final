@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Visualizer - AlgoVis</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>AlgoVis - Data Structures Visualizer</h1>
+    <p>Simple College Project</p>
+</div>
+
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="stack.html">Stack</a>
+    <a href="queue.html">Queue</a>
+    <a href="linkedlist.html" class="active">Linked List</a>
+    <a href="hashmap.html">HashMap</a>
+</div>
+
+<div class="container">
+    <h2>Linked List Visualizer (Singly)</h2>
+    <p>Linked List is collection of nodes. Each node has data and pointer to next node. HEAD points to first node.</p>
+
+    <div class="controls">
+        <label>Value:</label>
+        <input type="text" id="llInput" class="input-box" placeholder="e.g. 10">
+        <label>Position:</label>
+        <input type="number" id="llPosInput" class="input-box" placeholder="0" value="0" style="width:60px;">
+        <br><br>
+        <button class="btn" onclick="insertBeginning()">Insert at Beginning</button>
+        <button class="btn" onclick="insertEnd()">Insert at End</button>
+        <button class="btn" onclick="insertAt()">Insert at Position</button>
+        <button class="btn btn-grey" onclick="deleteBeginning()">Delete from Beginning</button>
+        <button class="btn btn-grey" onclick="deleteEnd()">Delete from End</button>
+        <button class="btn btn-grey" onclick="deleteAt()">Delete at Position</button>
+        <button class="btn btn-dark" onclick="clearList()">Clear</button>
+    </div>
+
+    <div class="controls">
+        <label>Search value:</label>
+        <input type="text" id="searchInput" class="input-box" placeholder="e.g. 10">
+        <button class="btn" onclick="search()">Search</button>
+    </div>
+
+    <div id="message" class="message">Ready. Insert nodes to build linked list.</div>
+
+    <h3>Linked List Display</h3>
+    <div id="listDisplay" class="display-area"></div>
+
+    <div class="info-box">
+        Size: <span id="sizeVal">0</span> |
+        HEAD: <span id="headVal">NULL</span>
+    </div>
+
+    <h3>How it works</h3>
+    <ul>
+        <li><b>Insert:</b> Create new node, link pointers</li>
+        <li><b>Delete:</b> Update pointer to skip node</li>
+        <li><b>Search:</b> Traverse from HEAD one by one</li>
+        <li><b>Display:</b> Traverse and show all nodes -> NULL</li>
+    </ul>
+
+    <div class="code-box">Backend: backend/visualizers.cpp -> struct Node, class LinkedList { insertAtBeginning(), insertAtEnd(), delete..., search(), display() }
+Frontend: js/linkedlist.js sends operations to the C++ backend and renders returned node data.</div>
+
+    <div class="footer">AlgoVis - Linked List Module | Backend: C++ | Frontend: HTML/CSS/JS</div>
+</div>
+
+<script src="js/linkedlist.js"></script>
+</body>
+</html>
